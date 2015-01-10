@@ -79,7 +79,7 @@ include $this->admin_tpl('header');
   	</tr>
   	<tr>
 	    <td align="right" width="100"> Email : </td>
-	    <td colspan=3><input type=text name="email" value="phpcms@phpcms.cn" size=20></td>
+	    <td colspan=3><input type=text name="email" value="814183676@qq.com" size=20></td>
   	</tr>
   	<tr>
 	    <td align="right" width="100"> <?php echo L('google_nums')?> : </td>

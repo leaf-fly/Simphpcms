@@ -186,7 +186,7 @@ class html {
 			$site_info = $this->site->get_by_id($siteid);
 			$file = pc_base::load_config('system', 'html_root').'/'.$site_info['dirname'].'/special/'.$filename.'/index.html';
 		} else {
-			$file = pc_base::load_config('system', 'html_root').'/special/'.$filename.'/index.html';
+			$file = pc_base::load_config('system', 'html_root').'/'.$filename.'/index.html';
 		}
 		if(!$ispage) {
 			$type_db = pc_base::load_model('type_model');

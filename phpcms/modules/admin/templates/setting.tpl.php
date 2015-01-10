@@ -37,7 +37,7 @@ include $this->admin_tpl('header');?>
 <table width="100%"  class="table_form">
   <tr>
     <th width="120"><?php echo L('setting_admin_email')?></th>
-    <td class="y-bg"><input type="text" class="input-text" name="setting[admin_email]" id="admin_email" size="30" value="<?php echo $admin_email?>"/></td>
+    <td class="y-bg"><input type="text" class="input-text" name="setting[admin_email]" id="admin_email" size="30" value=""/></td>
   </tr>
   <tr>
     <th width="120"><?php echo L('setting_category_ajax')?></th>
@@ -160,7 +160,7 @@ include $this->admin_tpl('header');?>
   </tr> 
   <tr>
     <th><?php echo L('mail_from')?></th>
-    <td class="y-bg"><input type="text" class="input-text" name="setting[mail_from]" id="mail_from" size="30" value="<?php echo $mail_from?>"/></td>
+    <td class="y-bg"><input type="text" class="input-text" name="setting[mail_from]" id="mail_from" size="30" value=""/></td>
   </tr>   
   <tr>
     <th><?php echo L('mail_auth')?></th>
@@ -171,7 +171,7 @@ include $this->admin_tpl('header');?>
 
 	  <tr>
 	    <th><?php echo L('mail_user')?></th>
-	    <td class="y-bg"><input type="text" class="input-text" name="setting[mail_user]" id="mail_user" size="30" value="<?php echo $mail_user?>"/></td>
+	    <td class="y-bg"><input type="text" class="input-text" name="setting[mail_user]" id="mail_user" size="30" value=""/></td>
 	  </tr> 
 	  <tr>
 	    <th><?php echo L('mail_password')?></th>
