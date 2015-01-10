@@ -1,21 +1,23 @@
 Simphpcms
 =========
->这是基于phpcms_v9.5.8修改的cms系统
->只供个人学习,使用
->如果你也有兴趣修改和学习这个系统,你可以fork项目或者提出issue
->让我们共同去学习交流
+This is based on PHPCMS v9.5.8 modify the CMS system.
+Only provide to use and learn.
+If you are interested in modifying and study this system, you can 'fork' project or 'issue' is put forward.
+Let us work together to study and communication.
 
-*个人主页:<http://www.sim-leaf.com/>
-*phpcms开源项目地址:<http://www.phpcms.cn/>
+* blog:<http://www.sim-leaf.com/>
+* phpcms address:<http://www.phpcms.cn/>
 
-在本地配置项目
+Local Configuration
 -----------------
-这个是已经安装完成的phpcms_v9.5.8
-如果你需要在本地或者其他地方使用项目,请根据下面的指示配置
+This is already installed phpcms_v9.5.8.
+If you need to use the project in the local or other places.
+Please according to the following instructions configuration.
 
-配置数据库连接:'\caches\configs\database.php'
->配置之前将simphpcms.sql导入数据库
+Configure database connection:'\caches\configs\database.php'
+>The 'simphpcms.sql' import database before configuration
 
-配置系统信息:'\caches\configs\system.php'
+Configure system information:'\caches\configs\system.php'
 
-如果你需要phpcms_v9.5.8的源代码,可以在['phpcms_v9.5.8'](https://github.com/leaf-fly/Simphpcms/tree/phpcms_v9.5.8/)分支获取.
+>If you need PHPCMS v9.5.8 source code.
+>You can 'checkout' ['phpcms_v9.5.8'](https://github.com/leaf-fly/Simphpcms/tree/phpcms_v9.5.8/) branch.
