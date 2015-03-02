@@ -15,6 +15,7 @@ class form {
 	 */
 	public static function editor($textareaid = 'content', $toolbar = 'basic', $module = '', $catid = '', $color = '', $allowupload = 0, $allowbrowser = 1,$alowuploadexts = '',$height = 200,$disabled_page = 0, $allowuploadnum = '10') {
 		$str ='';
+		return self::ueditor($textareaid, $toolbar, $module, $catid, $color, $allowupload, $allowbrowser, $alowuploadexts, $height, $disabled_page, $allowuploadnum);
 		if(!defined('EDITOR_INIT')) {
 			$str = '<script type="text/javascript" src="'.JS_PATH.'ckeditor/ckeditor.js"></script>';
 			define('EDITOR_INIT', 1);
@@ -57,7 +58,7 @@ class form {
 			$authkey = upload_key("$allowuploadnum,$alowuploadexts,$allowbrowser");
 			$str .="flashupload:true,alowuploadexts:'".$alowuploadexts."',allowbrowser:'".$allowbrowser."',allowuploadnum:'".$allowuploadnum."',authkey:'".$authkey."',\r\n";
 		}
-        if($allowupload) $str .= "filebrowserUploadUrl : 'index.php?m=attachment&c=attachments&a=upload&module=".$module."&catid=".$catid."&dosubmit=1',\r\n";
+        if($allowupload) $str .= "filebrowserUploadUrl : '".APP_PATH."index.php?m=attachment&c=attachments&a=upload&module=".$module."&catid=".$catid."&dosubmit=1',\r\n";
 		if($color) {
 			$str .= "extraPlugins : 'uicolor',uiColor: '$color',";
 		}
@@ -83,7 +84,43 @@ class form {
 		$str .= $ext_str;
 		return $str;
 	}
-	
+
+	public static function ueditor($textareaid = 'content', $toolbar = 'basic', $module = '', $catid = '', $color = '', $allowupload = 0, $allowbrowser = 1,$alowuploadexts = '',$height = 200,$disabled_page = 0, $allowuploadnum = '32') {
+	  if(!defined('EDITOR_INIT')) { 
+	    $str .= '<script type="text/javascript" src="ueditor/ueditor.config.js"></script>';
+	    $str .= '<script type="text/javascript" src="ueditor/ueditor.all.js"></script>';
+	    define('EDITOR_INIT', 1);
+	  } 
+	  $str .= "<script type='text/javascript'>"; 
+	  $str .= 'var ue = UE.getEditor("content",{
+			initialFrameWidth:650,
+			initialFrameHeight:500,
+			pasteplain:true,
+			autoFloatEnabled:false
+		});';
+		// $str .="UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;";
+		// $str .="UE.Editor.prototype.getActionUrl = function(action) {";
+		// $str .="	if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadimage') {";
+		// $str .="		return '".SITE_PROTOCOL.SITE_URL.WEB_PATH."index.php?m=attachment&c=attachments&a=upload&module=".$module."&catid=".$catid."&dosubmit=1';";
+		// $str .="	} else {";
+		// $str .="		return this._bkGetActionUrl.call(this, action);";
+		// $str .="	}";
+		// $str .="}";
+	  $str .= '</script>'; 
+    $str .= '<script type="text/javascript" src="ueditor/third-party/SyntaxHighlighter/shCore.js"></script>';
+    $str .= '<link rel="stylesheet" href="ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">';
+    $str .= "<script type='text/javascript'>SyntaxHighlighter.all();</script>";
+	  $ext_str = "<div class='editor_bottom'>"; 
+	  if(!defined('IMAGES_INIT')) { 
+	    $ext_str .= '<script type="text/javascript" src="'.JS_PATH.'swfupload/swf2ckeditor.js"></script>'; 
+	    define('IMAGES_INIT', 1); 
+	  } 
+	  $ext_str .= '</div>'; 
+	  $str .= $ext_str;
+		return $str;
+	}
+
+
 	/**
 	 * 
 	 * @param string $name 表单名称
