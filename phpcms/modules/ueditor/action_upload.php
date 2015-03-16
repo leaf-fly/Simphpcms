@@ -12,38 +12,38 @@ $base64 = "upload";
 switch (htmlspecialchars($_GET['action'])) {
     case 'uploadimage':
         $config = array(
-            "pathFormat" => $CONFIG['imagePathFormat'],
-            "maxSize" => $CONFIG['imageMaxSize'],
-            "allowFiles" => $CONFIG['imageAllowFiles']
+            "pathFormat" => $this->CONFIG['imagePathFormat'],
+            "maxSize" => $this->CONFIG['imageMaxSize'],
+            "allowFiles" => $this->CONFIG['imageAllowFiles']
         );
-        $fieldName = $CONFIG['imageFieldName'];
+        $fieldName = $this->CONFIG['imageFieldName'];
         break;
     case 'uploadscrawl':
         $config = array(
-            "pathFormat" => $CONFIG['scrawlPathFormat'],
-            "maxSize" => $CONFIG['scrawlMaxSize'],
-            "allowFiles" => $CONFIG['scrawlAllowFiles'],
+            "pathFormat" => $this->CONFIG['scrawlPathFormat'],
+            "maxSize" => $this->CONFIG['scrawlMaxSize'],
+            "allowFiles" => $this->CONFIG['scrawlAllowFiles'],
             "oriName" => "scrawl.png"
         );
-        $fieldName = $CONFIG['scrawlFieldName'];
+        $fieldName = $this->CONFIG['scrawlFieldName'];
         $base64 = "base64";
         break;
     case 'uploadvideo':
         $config = array(
-            "pathFormat" => $CONFIG['videoPathFormat'],
-            "maxSize" => $CONFIG['videoMaxSize'],
-            "allowFiles" => $CONFIG['videoAllowFiles']
+            "pathFormat" => $this->CONFIG['videoPathFormat'],
+            "maxSize" => $this->CONFIG['videoMaxSize'],
+            "allowFiles" => $this->CONFIG['videoAllowFiles']
         );
-        $fieldName = $CONFIG['videoFieldName'];
+        $fieldName = $this->CONFIG['videoFieldName'];
         break;
     case 'uploadfile':
     default:
         $config = array(
-            "pathFormat" => $CONFIG['filePathFormat'],
-            "maxSize" => $CONFIG['fileMaxSize'],
-            "allowFiles" => $CONFIG['fileAllowFiles']
+            "pathFormat" => $this->CONFIG['filePathFormat'],
+            "maxSize" => $this->CONFIG['fileMaxSize'],
+            "allowFiles" => $this->CONFIG['fileAllowFiles']
         );
-        $fieldName = $CONFIG['fileFieldName'];
+        $fieldName = $this->CONFIG['fileFieldName'];
         break;
 }
 

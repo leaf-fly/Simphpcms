@@ -10,12 +10,12 @@ include("Uploader.class.php");
 
 /* 上传配置 */
 $config = array(
-    "pathFormat" => $CONFIG['catcherPathFormat'],
-    "maxSize" => $CONFIG['catcherMaxSize'],
-    "allowFiles" => $CONFIG['catcherAllowFiles'],
+    "pathFormat" => $this->CONFIG['catcherPathFormat'],
+    "maxSize" => $this->CONFIG['catcherMaxSize'],
+    "allowFiles" => $this->CONFIG['catcherAllowFiles'],
     "oriName" => "remote.png"
 );
-$fieldName = $CONFIG['catcherFieldName'];
+$fieldName = $this->CONFIG['catcherFieldName'];
 
 /* 抓取远程图片 */
 $list = array();

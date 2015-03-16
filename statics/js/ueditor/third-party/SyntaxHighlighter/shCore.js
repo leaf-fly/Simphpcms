@@ -703,7 +703,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
             'smart-tabs' : true,
 
             /** Gets or sets tab size. */
-            'tab-size' : 4,
+            'tab-size' : 2,
 
             /** Enables or disables gutter. */
             'gutter' : true,
